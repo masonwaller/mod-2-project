@@ -8,3 +8,7 @@
 <li>  <%= @park.description %> </li><br>
 
 <%= image_tag("#{@picture}.jpg") %>
+
+<div>
+<%= link_to "Add Comment", new_comment_path(@park) %>
+</div>
