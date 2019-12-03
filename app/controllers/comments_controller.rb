@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-    before_action :find_book
+    #before_action :find_park
     before_action :find_comment, only: [:edit, :update, :destroy]
     def new 
         @comment = Comment.new
@@ -15,7 +15,8 @@ class CommentsController < ApplicationController
             redirect_to park_path(@park)
         else
             render :new
-    end 
+        end 
+    end
 
     def edit
     end
@@ -34,17 +35,17 @@ class CommentsController < ApplicationController
     end 
 
 private 
-def comment_params
-    params.require(:comment).permit(:comment)
-end
+    def comment_params
+        params.require(:comment).permit(:text)
+    end
 
-def find_park
-    @park = Park.find(params[park.id])
-end
+#def find_park
+    #@park = Park.find(params[:id])
+#end
 
-#finding the current park that the comment is associated with (book_id)
-def find_comment
-    @comment = Comment.find(params[:id])
-end 
+#finding the current park that the comment is associated with (park_id in database)
+    def find_comment
+        @comment = Comment.find(params[:id])
+    end 
 
 end 
