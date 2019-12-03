@@ -1,0 +1,13 @@
+<h1>New Dog</h1>
+
+<%= form_with model: @dog do |f|%>
+<label>Name: </label><br>
+<%= f.text_field :name %><br>
+
+<label>Owner: </label><br>
+<%= collection_select(:dog, :user_id, User.all, :id, :name) %><br>
+
+<label>Image: </label><br>
+<%= f.file_field :avatar %><br>
+<%= f.submit %>
+<% end %>
