@@ -1,5 +1,7 @@
 <h1>About this Park</h1>
 <p>Park Name:</p>
+
+<div class="col-md-8">
 <li> <%= @park.name %> </li>
 <p>Park Location:</p>
 <li>  <%= @park.location %> </li>
@@ -8,7 +10,7 @@
 <li>  <%= @park.description %> </li><br>
 
 <%= image_tag("#{@picture}.jpg") %>
-
+</div>
 <div>
-<%= link_to "Add Comment", new_comment_path(@park) %>
+<%= link_to "Add Comment", new_park_comment_path(@park) %>
 </div>
