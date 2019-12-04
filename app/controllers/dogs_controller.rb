@@ -10,6 +10,7 @@ class DogsController < ApplicationController
     end
     def create
         @dog = Dog.new(dog_params)
+        @dog.user_id = session[:user_id]
         if @dog.valid?
             @dog.save
             redirect_to @dog
@@ -21,6 +22,6 @@ class DogsController < ApplicationController
 
     private
     def dog_params
-        params.require(:dog).permit(:name, :user_id, :avatar, :bio)
+        params.require(:dog).permit(:name, :avatar, :bio)
     end
 end

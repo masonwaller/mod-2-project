@@ -1,5 +1,8 @@
 
 <h1><%= @dog.name %></h1><br>
 <h3><%= @dog.user.name %></h3>
-<%= image_tag @dog.avatar %>
+
+<div style="width:400px; height:auto">
+<%= image_tag(@dog.avatar, style: 'width: 100%') %>
+</div>
 <%= @dog.bio %>
