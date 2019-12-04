@@ -4,8 +4,6 @@
 <label>Name: </label><br>
 <%= f.text_field :name %><br>
 
-<label>Owner: </label><br>
-<%= collection_select(:dog, :user_id, User.all, :id, :name) %><br>
 
 <label>Bio: </label><br>
 <%= f.text_area :bio %><br>
