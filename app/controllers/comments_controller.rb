@@ -1,29 +1,32 @@
 class CommentsController < ApplicationController
-    #before_action :find_park
-    before_action :find_comment, only: [:edit, :update, :destroy]
+    before_action :find_park
+    #before_action :find_park, only: [:edit, :update, :destroy]
     def new 
         @comment = Comment.new
+        @park = Park.find(params[:park_id])
     end 
 
     def create 
         @comment = Comment.new(comment_params)
         #associate a comment with the current park
         @comment.park_id = @park.id
-        @comment.user_id = current_user.id
+        @comment.user_id = session[:user_id]
 
-        if @comment.save
-            redirect_to park_path(@park)
+        if @comment.valid?
+            @comment.save
+            redirect_to @park
         else
             render :new
         end 
     end
 
     def edit
+        #byebug
     end
 
     def update
         if @comment.update(comment_params)
-            redirect_to park_path(@park)
+            redirect_to @park
         else 
             render :edit
         end
@@ -31,7 +34,7 @@ class CommentsController < ApplicationController
 
     def destroy
         @comment.destroy
-        redirect_to park_path(@park)
+        redirect_to @park
     end 
 
 private 
@@ -39,9 +42,9 @@ private
         params.require(:comment).permit(:text)
     end
 
-#def find_park
-    #@park = Park.find(params[:id])
-#end
+def find_park
+    @park = Park.find(params[:park_id])
+end
 
 #finding the current park that the comment is associated with (park_id in database)
     def find_comment

@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-
+  resources :parks do
+    resources :comments
+  end
+  
   resources :dogs
-  resources :comments
-  resources :parks
   resources :users
+
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   get 'welcome', to: 'sessions#welcome'
