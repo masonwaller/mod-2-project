@@ -1,4 +1,14 @@
-<h1>all the parks</h1>
+
+
+<!-- About Section -->
+  <div class="w3-container w3-padding-32" id="about">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About</h3>
+    <p>Austin is top dog among most pet-friendly cities in Texas.  You will find plenty of parks and expanses of land throughtout the city for you
+    and your four-legged friend to reconnect with nature.  Which ones are the best? Be sure to checkout our list of best dog parks in Austin.  Leave a comment and share with others what you think!
+    </p>
+  </div>
+
+
 <ul>
   <% @parks.each do |park| %>
     <li>
@@ -7,3 +17,32 @@
     <br>
   <% end %>
 </ul>
+
+
+   <!--Section: Jumbotron-->
+<% @parks.each do |park| %>
+
+
+      <!--Section: Cards-->
+      <section class="text-center">
+
+            <!--Card-->
+            <div class="card">
+
+              <!--Card image-->
+              <div class="view overlay">
+                <div class="embed-responsive embed-responsive-16by9 rounded-top">
+                  <%#= image_tag("#{@picture}.jpg") %>
+                </div>
+              </div>
+
+              <!--Card content-->
+              <div class="card-body">
+                <!--Title-->
+                <h4 class="card-title"> <%= link_to park.name, park_path(park.id) %></h4>
+                <!--Text-->
+                <p class="card-text"><%= park.description%>.</p>
+              
+              
+ <% end %>
+
