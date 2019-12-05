@@ -12,26 +12,22 @@
 
 
 <div class="text-center">
-<div class="card">
-  <div class="card-header">
+<h4>
   Seeking new adventure? Log in or Sign up!
-  </div>
-  <div class="card-body">
-    
-   
+</h4>
  
 <% if logged_in? %>
     <h1>You are Logged In, <%= current_user.name %></h1>
 <%end%>
-<button type="button" class="btn btn-info">
+<button type="button" class="btn btn-info btn-lg btn-rounded text-lg">
 <%= link_to "Sign Up", '/users/new', method: :get%>
 </button>
 
-<button type="button" class="btn btn-warning">
+<button type="button" class="btn btn-warning btn-lg btn-rounded text-lg">
 <%= link_to "Login", '/login', method: :get%>
 </button>
 
  </div>
 </div>
-</div>
 
+</div>
