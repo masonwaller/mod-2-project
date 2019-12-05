@@ -1,6 +1,6 @@
 
 <h1><%= @dog.name %></h1><br>
-<h3><%= @dog.user.name %></h3>
+<h3><%=link_to @dog.user.name, user_path(@dog.user) %></h3>
 
 <div style="width:400px; height:auto">
 <%= image_tag(@dog.avatar, style: 'width: 100%') %>
