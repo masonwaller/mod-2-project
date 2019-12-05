@@ -1,4 +1,37 @@
+
 <h1>Welcome</h1>
 
 <%= button_to "Sign Up", '/users/new', method: :get%>
 <%= button_to "Login", '/login', method: :get%>
+
+<div class="text-center">
+<h1 class="display-1">Welcome to Austin Pawsome Adventures </h1><br>
+      <img class="img-fluid img-thumbnail" width="40% \9;" alt="Responsive image" src="https://cdn.dribbble.com/users/97602/screenshots/3396907/walkcycle_dribbble3.gif" />
+</div>
+</div>
+
+
+<div class="text-center">
+<div class="card">
+  <div class="card-header">
+  Seeking new adventure? Log in or Sign up!
+  </div>
+  <div class="card-body">
+    
+   
+ 
+<% if logged_in? %>
+    <h1>You are Logged In, <%= current_user.name %></h1>
+<%end%>
+<button type="button" class="btn btn-info">
+<%= link_to "Sign Up", '/users/new', method: :get%>
+</button>
+
+<button type="button" class="btn btn-warning">
+<%= link_to "Login", '/login', method: :get%>
+</button>
+
+ </div>
+</div>
+</div>
+
