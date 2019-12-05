@@ -1,2 +1,15 @@
 <h1><%= @user.name %></h1><br>
 <h3><%= @user.email %></h3>
+
+<h3>My Dogs</h3>
+<%@dogs = @user.dogs %>
+<% @dogs.each do |f|%>
+<div style="width:400px; height:auto">
+<%=link_to image_tag(f.avatar, style: 'width: 100%'), dog_path(f.id) %>
+</div><br>
+<%=link_to f.name, dog_path(f.id) %><br>
+<% end %>
+
+<form action="/dogs/new" method="get">
+  <button>Add Another Dog</button>
+</form>
