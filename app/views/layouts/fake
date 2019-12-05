@@ -1,0 +1,17 @@
+   <nav class="navbar navbar-default">
+    <div class="container">
+      
+      <div class="navbar-header">
+        <%= link_to "Best Dog Parks In Austin", parks_path, class: "navbar-brand" %>
+      </div>
+      <div class="collapse navbar-collapse" id="basicExampleNav">
+      <ul class="nav navbar-bar mr-auto">
+        <li class="nav-item"><% if current_user %>
+        Logged in as <%=link_to current_user.name, user_path(current_user) %> </li> 
+        <li class="nav-item"><%= link_to "Log out", session_path("current"), method: "delete"%>
+        <% end %></li>
+        <li class="nav-item"><%= link_to "All Dogs", dogs_path%></li>
+      <%# if user_signed_in? %>
+      <%#= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+      <%# else %>
+      <%#= link_to "Log In", new_user_session_path, %>
