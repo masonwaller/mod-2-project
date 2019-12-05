@@ -23,7 +23,7 @@
       </div>
       <ul class="nav navbar-bar">
         <% if current_user %>
-        Logged in as <%= @current_user.name %>  
+        Logged in as <%= current_user.name %>  
         <%= link_to "Log out", session_path("current"), method: "delete"%>
         <% end %>
         </ul>

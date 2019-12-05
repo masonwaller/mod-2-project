@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :parks do
     resources :comments
   end
-  
+  root :to => "sessions#welcome", :id => '1'
   resources :dogs
   resources :users
   resources :sessions
