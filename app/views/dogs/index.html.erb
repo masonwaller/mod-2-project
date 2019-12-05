@@ -1,3 +1,15 @@
+<html>
+<head>
+<style>
+.body {background-color: yellow;}
+.picture {width: 260px; height: 260px; object-fit: scale-down;}
+</style>
+</head>
+<div class= "body">
 <% @dogs.each do |f|%>
-    <%= f.name %>
+
+   <%=link_to image_tag(f.image_resize), dog_path(f) %>
+
 <% end %>
+</div>
+</html>
