@@ -8,12 +8,15 @@ class UsersController < ApplicationController
     end
     def create 
         @user = User.new(user_params)
-        # byebug
+        #store in lowercare to avoid duplcates
+        @user.email.downcase!
         if @user.valid?
             @user.save
+            flash[:notice] = "Account created successfully!"
             session[:user_id] = @user.id
             redirect_to @user
         else 
+            flash.now.alert = "Oops, not successful! please ask your hooman to created an account for you and try again. "
             render '/welcome'
         end
     end
