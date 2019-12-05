@@ -1,48 +1,32 @@
 
-
-<!-- About Section -->
-  <div class="w3-container w3-padding-32" id="about">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About</h3>
-    <p>Austin is top dog among most pet-friendly cities in Texas.  You will find plenty of parks and expanses of land throughtout the city for you
-    and your four-legged friend to reconnect with nature.  Which ones are the best? Be sure to checkout our list of best dog parks in Austin.  Leave a comment and share with others what you think!
-    </p>
+ 
+ <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 font-italic">Best Dog Parks</h1>
+      <p class="lead my-3">Take your four leggeded furry friend out</p>
+      <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">click here for your next adventure</a></p>
+    </div>
   </div>
+<br>
 
+<div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+       
 
-<ul>
   <% @parks.each do |park| %>
-    <li>
-      <%= link_to park.name, park_path(park.id) %>
-    </li>
-    <br>
+      <%= link_to park.name, park_path(park.id) %> <br>
   <% end %>
-</ul>
+
+  </strong>
+  
+  </div>
+  </div>
+  </div>
+  
 
 
-   <!--Section: Jumbotron-->
-<% @parks.each do |park| %>
 
 
-      <!--Section: Cards-->
-      <section class="text-center">
-
-            <!--Card-->
-            <div class="card">
-
-              <!--Card image-->
-              <div class="view overlay">
-                <div class="embed-responsive embed-responsive-16by9 rounded-top">
-                  <%#= image_tag("#{@picture}.jpg") %>
-                </div>
-              </div>
-
-              <!--Card content-->
-              <div class="card-body">
-                <!--Title-->
-                <h4 class="card-title"> <%= link_to park.name, park_path(park.id) %></h4>
-                <!--Text-->
-                <p class="card-text"><%= park.description%>.</p>
-              
-              
- <% end %>
+  
 
