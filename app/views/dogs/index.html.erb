@@ -1,12 +1,16 @@
 <html>
-
-
 <div class="text-center">
+<img class="img-fluid" width="19% \9;" alt="Responsive image" src="https://cdn.dribbble.com/users/237814/screenshots/4387219/casper-avatars_drib.jpg" />
+<img class="img-fluid" width="19% \9;" alt="Responsive image" src="https://cdn.dribbble.com/users/237814/screenshots/4387219/casper-avatars_drib.jpg" />
+<img class="img-fluid" width="19% \9;" alt="Responsive image" src="https://cdn.dribbble.com/users/237814/screenshots/4387219/casper-avatars_drib.jpg" />
+<img class="img-fluid" width="19% \9;" alt="Responsive image" src="https://cdn.dribbble.com/users/237814/screenshots/4387219/casper-avatars_drib.jpg" />
+<img class="img-fluid" width="19% \9;" alt="Responsive image" src="https://cdn.dribbble.com/users/237814/screenshots/4387219/casper-avatars_drib.jpg" />
+<br><br>
+ <h1 class="mt-4">GET TO KNOW A DOG</h1>
+ <h3>Click on the photo to read their bio</h3><br>
   <% @dogs.each do |f|%>
-
-
-   <%=link_to image_tag(f.image_resize), dog_path(f) %>
-
+   <%=link_to image_tag(f.avatar, style: 'width: 25%'), dog_path(f) %>
 <% end %>
+ 
 </div>
 </html>

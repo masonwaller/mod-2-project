@@ -1,28 +1,49 @@
+<img class="img-fluid" width="19% \9;" alt="Responsive image" src="https://cdn.dribbble.com/users/237814/screenshots/4387219/casper-avatars_drib.jpg" />
+<img class="img-fluid" width="19% \9;" alt="Responsive image" src="https://cdn.dribbble.com/users/237814/screenshots/4387219/casper-avatars_drib.jpg" />
+<img class="img-fluid" width="19% \9;" alt="Responsive image" src="https://cdn.dribbble.com/users/237814/screenshots/4387219/casper-avatars_drib.jpg" />
+<img class="img-fluid" width="19% \9;" alt="Responsive image" src="https://cdn.dribbble.com/users/237814/screenshots/4387219/casper-avatars_drib.jpg" />
+<img class="img-fluid" width="19% \9;" alt="Responsive image" src="https://cdn.dribbble.com/users/237814/screenshots/4387219/casper-avatars_drib.jpg" />
+
 
 <br><br><br>
     <hr class="featurette-divider">
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading">
-         <%= @park.name %><br>
+      <h3 class="display-1">
+         <%= @park.name %><br></h3>
+          <div style="font-size: 20px" class="lead">
      <span class="text-muted">
-        <%= @park.location %>
-     </span></h2>
-        <p class="lead">
+        <%= @park.location %><br>
+     </span>
+     
         <%= @park.description %>
-        </p>
+        </div>
+      </div>
       </div>
      
       <div class="col-md-5">
-         <%= image_tag("#{@picture}.jpg") %> <br><br>
-          <a class="btn btn-secondary" href="#" role="button"><%= link_to "Add Comment", new_park_comment_path(@park) %></a>
+         <%= image_tag("#{@picture}.jpg", :size => "500x300") %> 
+   </div>
+   <button type="button" class="btn btn-info btn-lg btn-rounded text-lg">
+<%= link_to "ADD COMMENT", new_park_comment_path(@park) %>
+</button>
 
-          <h3>Comments on this Park</h3>
-<%@comments = @park.comments %>
-<% @comments.each do |f|%>
-
-<%=f.text %>
--<%= f.user.name%><br><br>
+        <!-- Single Comment -->
+       <h1 class="mt-4">comments: 
+              </h1> 
+     <%@comments = @park.comments %>
+              <% @comments.each do |f|%>
+        <div class="media mb-6">
+          <img class="d-flex mr-3 rounded-circle" class="img-fluid img-thumbnail" width="7% \9;" src="https://cdn.dribbble.com/users/502620/screenshots/5397310/doggo_3d.gif" /> 
+         <div style="font-size: 15px" class="media-body mt-2">
+           
+              <%= f.user.name%>:
+              <%=f.text %>
+              
+        </div>
+        </div>
+       
 <% end %>
-      </div>
-    </div>
+       
+           
+    
