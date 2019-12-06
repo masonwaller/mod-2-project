@@ -1,19 +1,20 @@
 
 <h1 class="display-1">  Hello <%= @user.name.capitalize %>!</h1>
 <div class="text-center">
-<h3>Photos of your Beloved Fur-Babies</h3>
+<h3>Photos of your Beloved Fur-Babies</h3><br>
+
+<form action="/dogs/new" method="get">
+  <button class="btn btn-info btn-lg btn-rounded text-lg">Add Another Dog</button>
+</form><br>
+
 <%@dogs = @user.dogs %>
 <% @dogs.each do |f|%>
 <div style="width:400px; height:auto">
 <%=link_to image_tag(f.avatar, style: 'width: 100%'), dog_path(f.id) %>
 </div><br>
-<%=link_to f.name, dog_path(f.id) %><br>
+
 <% end %>
 
-<form action="/dogs/new" method="get">
-
-  <button class="btn btn-info btn-lg btn-rounded text-lg">Add Another Dog</button>
-</form>
 <footer>
 <img class="img-fluid" width="19% \9;" alt="Responsive image" src="https://cdn.dribbble.com/users/237814/screenshots/4387219/casper-avatars_drib.jpg" />
 <img class="img-fluid" width="19% \9;" alt="Responsive image" src="https://cdn.dribbble.com/users/237814/screenshots/4387219/casper-avatars_drib.jpg" />
@@ -22,7 +23,5 @@
 <img class="img-fluid" width="19% \9;" alt="Responsive image" src="https://cdn.dribbble.com/users/237814/screenshots/4387219/casper-avatars_drib.jpg" />
 </footer>
 </div>
-<form action="/dogs/new" method="get">
-  <button>Add Another Dog To Your Profile</button>
-</form>
+
 
