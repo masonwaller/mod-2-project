@@ -1,8 +1,14 @@
 
+<div class="text-center">
 <h1><%= @dog.name %></h1><br>
 <h3><%=link_to @dog.user.name, user_path(@dog.user) %></h3>
 
-<div style="width:400px; height:auto">
-<%= image_tag(@dog.avatar, style: 'width: 100%') %>
-</div>
+
+<div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <%= image_tag @dog.avatar, :size => "300x200" %>
+                <div class="card-body">
+<p class="card-text">
 <%= @dog.bio %>
+</p>
+</div></div></div>
