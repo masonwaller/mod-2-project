@@ -1,5 +1,11 @@
-<h1> New Comment </h1>
+
+<div class="text-center">
+<img class="img-fluid img-thumbnail" width="20% \9;" alt="Responsive image" src="https://cdn.dribbble.com/users/6051/screenshots/7779269/media/3e92a3efe674d3348c7ddc8b76fca084.png" />
+
+<h1> Share your adventure </h1>
 <%= form_for [@park, @comment] do |f|%>
-<%= f.text_area :text %>
-<%= f.submit %>
+<%= f.text_area :text %><br>
+<%= f.submit %> 
 <% end %>
+
+</div>
