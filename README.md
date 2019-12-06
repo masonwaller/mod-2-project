@@ -8,3 +8,4 @@ To get this app running all you need to do is set up the database and run the se
 To start the server you need to run rails s.  Then you will need to go to whichever localhost site you are running this server on. The default is localhost:3000. Now you are ready to traverse the site.
 
 
+Created by: Mason and Faith
