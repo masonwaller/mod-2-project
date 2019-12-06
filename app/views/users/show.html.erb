@@ -1,27 +1,72 @@
 
-<h1 class="display-1">  Hello <%= @user.name.capitalize %>!</h1>
-<div class="text-center">
-<h3>Photos of your Beloved Fur-Babies</h3><br>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Blog Post - Start Bootstrap Template</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/blog-post.css" rel="stylesheet">
+
+</head>
+
+
+<img class="img-fluid" width="19% \9;" alt="Responsive image" src="https://cdn.dribbble.com/users/237814/screenshots/4387219/casper-avatars_drib.jpg" />
+<img class="img-fluid" width="19% \9;" alt="Responsive image" src="https://cdn.dribbble.com/users/237814/screenshots/4387219/casper-avatars_drib.jpg" />
+<img class="img-fluid" width="19% \9;" alt="Responsive image" src="https://cdn.dribbble.com/users/237814/screenshots/4387219/casper-avatars_drib.jpg" />
+<img class="img-fluid" width="19% \9;" alt="Responsive image" src="https://cdn.dribbble.com/users/237814/screenshots/4387219/casper-avatars_drib.jpg" />
+<img class="img-fluid" width="19% \9;" alt="Responsive image" src="https://cdn.dribbble.com/users/237814/screenshots/4387219/casper-avatars_drib.jpg" />
+
+
+
+<body>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+
+      <!-- Post Content Column -->
+      <div class="col-lg-8">
+
+        <!-- Title -->
+        <h1 class="mt-4">Hello <%= @user.name.capitalize %>!</h1>
+
+<h3>Here are your Beloved Fur-Babies! Click on the photo to read their bio</h3><br>
 
 <form action="/dogs/new" method="get">
   <button class="btn btn-info btn-lg btn-rounded text-lg">Add Another Dog</button>
 </form><br>
 
-<%@dogs = @user.dogs %>
-<% @dogs.each do |f|%>
-<div style="width:400px; height:auto">
-<%=link_to image_tag(f.avatar, style: 'width: 100%'), dog_path(f.id) %>
-</div><br>
+        <!-- Preview Image -->
+         <div class="text-center">
+       
+         
+        <%@dogs = @user.dogs %>
+        <% @dogs.each do |f|%>    
+             
+        <%=link_to image_tag(f.avatar, style: 'width: 45%'), dog_path(f.id) %>
+        
+        <% end %>
+        
+        <hr>
+        </div>
+        
+        
 
-<% end %>
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<footer>
-<img class="img-fluid" width="19% \9;" alt="Responsive image" src="https://cdn.dribbble.com/users/237814/screenshots/4387219/casper-avatars_drib.jpg" />
-<img class="img-fluid" width="19% \9;" alt="Responsive image" src="https://cdn.dribbble.com/users/237814/screenshots/4387219/casper-avatars_drib.jpg" />
-<img class="img-fluid" width="19% \9;" alt="Responsive image" src="https://cdn.dribbble.com/users/237814/screenshots/4387219/casper-avatars_drib.jpg" />
-<img class="img-fluid" width="19% \9;" alt="Responsive image" src="https://cdn.dribbble.com/users/237814/screenshots/4387219/casper-avatars_drib.jpg" />
-<img class="img-fluid" width="19% \9;" alt="Responsive image" src="https://cdn.dribbble.com/users/237814/screenshots/4387219/casper-avatars_drib.jpg" />
-</footer>
-</div>
+</body>
 
-
+</html>

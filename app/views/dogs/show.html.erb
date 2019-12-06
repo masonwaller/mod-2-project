@@ -1,7 +1,48 @@
 
-<div class="text-center">
-<h1><%= @dog.name %></h1><br>
-<h3><%=link_to @dog.user.name, user_path(@dog.user) %></h3>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Blog Post - Start Bootstrap Template</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/blog-post.css" rel="stylesheet">
+
+</head>
+
+<div class="text-class">
+<img class="img-fluid" width="19% \9;" alt="Responsive image" src="https://cdn.dribbble.com/users/237814/screenshots/4387219/casper-avatars_drib.jpg" />
+<img class="img-fluid" width="19% \9;" alt="Responsive image" src="https://cdn.dribbble.com/users/237814/screenshots/4387219/casper-avatars_drib.jpg" />
+<img class="img-fluid" width="19% \9;" alt="Responsive image" src="https://cdn.dribbble.com/users/237814/screenshots/4387219/casper-avatars_drib.jpg" />
+<img class="img-fluid" width="19% \9;" alt="Responsive image" src="https://cdn.dribbble.com/users/237814/screenshots/4387219/casper-avatars_drib.jpg" />
+<img class="img-fluid" width="19% \9;" alt="Responsive image" src="https://cdn.dribbble.com/users/237814/screenshots/4387219/casper-avatars_drib.jpg" />
+
+
+
+<body>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+
+      <!-- Post Content Column -->
+      <div class="col-lg-8">
+
+        <!-- Title -->
+        <h1 class="mt-4">Hello <%= @dog.name %>!</h1>
+
+
+<h3>Master:<%=link_to @dog.user.name, user_path(@dog.user) %></h3>
 
 
 <div class="col-md-4">
@@ -11,4 +52,4 @@
 <p class="card-text">
 <%= @dog.bio %>
 </p>
-</div></div></div>
+</div></div></div></div>
