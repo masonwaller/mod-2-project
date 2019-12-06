@@ -16,5 +16,13 @@
       <div class="col-md-5">
          <%= image_tag("#{@picture}.jpg") %> <br><br>
           <a class="btn btn-secondary" href="#" role="button"><%= link_to "Add Comment", new_park_comment_path(@park) %></a>
+
+          <h3>Comments on this Park</h3>
+<%@comments = @park.comments %>
+<% @comments.each do |f|%>
+
+<%=f.text %>
+-<%= f.user.name%><br>
+<% end %>
       </div>
     </div>
