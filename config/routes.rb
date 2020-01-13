@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+  root :to => "sessions#welcome", :id => '1'
   resources :parks do
     resources :comments
   end
-  root :to => "sessions#welcome", :id => '1'
+
   resources :dogs
   resources :users
   resources :sessions
